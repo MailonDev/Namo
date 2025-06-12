@@ -1,0 +1,191 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    position: relative;
+}
+
+.container {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+    max-width: 90%;
+    box-sizing: border-box;
+}
+
+h1 {
+    color: #e91e63;
+    margin-bottom: 20px;
+}
+
+.slideshow-container {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    height: 400px;
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.slideshow-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.slideshow-container img.active {
+    opacity: 1;
+}
+
+.message {
+    font-size: 1.5em;
+    color: #d81b60;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#countdown {
+    font-size: 1.8em;
+    color: #c2185b;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.music-info {
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(233, 30, 99, 0.1);
+    border-radius: 10px;
+    border-left: 4px solid #e91e63;
+}
+
+.music-info p {
+    margin: 5px 0;
+    color: #c2185b;
+}
+
+.music-info em {
+    font-size: 0.9em;
+    color: #ad1457;
+}
+
+#play-pause-button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+#play-pause-button:hover {
+    background-color: #c2185b;
+}
+
+/* Corações flutuantes */
+.heart {
+    position: absolute;
+    background-color: #ff69b4;
+    transform: rotate(-45deg);
+    animation: float 10s infinite ease-in-out;
+    opacity: 0;
+}
+
+.heart:before,
+.heart:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ff69b4;
+    border-radius: 50%;
+}
+
+.heart:before {
+    top: -50%;
+    left: 0;
+}
+
+.heart:after {
+    top: 0;
+    left: 50%;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) rotate(-45deg) scale(0.5);
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-1000px) rotate(-45deg) scale(1.5);
+        opacity: 0;
+    }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+
+    .message {
+        font-size: 1.2em;
+    }
+
+    #countdown {
+        font-size: 1.5em;
+    }
+
+    .slideshow-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+    }
+
+    h1 {
+        font-size: 1.5em;
+    }
+
+    .message {
+        font-size: 1em;
+    }
+
+    #countdown {
+        font-size: 1.2em;
+    }
+
+    .slideshow-container {
+        height: 250px;
+    }
+}
+
